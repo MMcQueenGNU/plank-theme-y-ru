@@ -1,13 +1,15 @@
 # Maintainer: McQueen <clear3239@yahoo.com>
-
-pkgname=plank-theme-y-ru
+_pkgname=plank-theme-y-ru
+pkgname=$_pkgname-git
 pkgver=0.1
 pkgrel=1
+pkgdesc="Y-RU theme for Plank"
 arch=('any')
-url='https://github.com/MMcQueenGNU/plank-theme-y-ru'
+url='https://github.com/kennyh7279/plank-themes'
 license=('GPL3')
 depends=('plank')
-source=("git://github.com/MMcQueenGNU/$pkgname.git")
+makedepends=('git')
+source=("git://github.com/MMcQueenGNU/$_pkgname.git")
 sha256sums=('SKIP')
 
 build() {
@@ -15,7 +17,7 @@ build() {
 }
 
 package() {
-	cd $srcdir/$pkgname
+	cd $srcdir/$_pkgname
 	mkdir -p $pkgdir/usr/share/plank/themes/y-ru
 	install -m 755 dock.theme $pkgdir/usr/share/plank/themes/y-ru/
 }
